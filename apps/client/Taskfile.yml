@@ -1,0 +1,11 @@
+version: '3'
+
+# dotenv: []
+
+tasks:
+  run:
+    env:
+      GRPC_URL: localhost:4567
+    cmds:
+      - nodemon -e go --signal SIGKILL --exec 'go run -tags dynamic main.go --dev || exit 1'
+

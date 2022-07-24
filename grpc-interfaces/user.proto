@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option go_package = "game.typing-guru.com/rpc/user";
+
+service User {
+  rpc GetUserById(GetUserByIdIn) returns (GetUserOut);
+  rpc GetUserByEmail(GetUserByEmailIn) returns (GetUserOut);
+  rpc GetUserByName(GetUserByNameIn) returns (GetUserOut);
+  rpc GetUserBySession(GetUserBySessionIdIn) returns (GetUserOut);
+}
+
+message GetUserOut {
+  string username = 1;
+  string email = 2;
+  string id = 3;
+  string status = 4;
+}
+
+message GetUserByEmailIn {
+  string email = 1;
+}
+
+
+message GetUserByNameIn {
+  string username = 1;
+}
+
+message GetUserByIdIn {
+  string id = 1;
+}
+
+message GetUserBySessionIdIn {
+  string sessionId = 1;
+}
