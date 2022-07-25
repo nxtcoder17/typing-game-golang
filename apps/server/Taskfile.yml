@@ -7,5 +7,5 @@ tasks:
     env:
       GRPC_PORT: 4567
     cmds:
-      - nodemon -e go --signal SIGKILL --exec 'go run -tags dynamic main.go --dev || exit 1'
+      - nodemon -e go --signal SIGKILL --exec 'go run main.go --dev || exit 1'
 

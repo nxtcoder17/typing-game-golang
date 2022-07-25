@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  client:run:
+    dir: ./apps/client
+    env:
+      GRPC_URL: localhost:4567
+    interactive: true
+    cmds:
+#      - nodemon -e go --signal SIGKILL --exec 'go run main.go --dev || exit 1'
+      - go build  -o game ./main.go
+      - ./game
+
+  server:run:
+    dir: ./apps/server
+    env:
+      GRPC_PORT: 4567
+    cmds:
+#      - nodemon -e go --signal SIGKILL --exec 'go run main.go --dev || exit 1'
+      - go build ./main.go -o game
+      - ./game
+#      - go run main.go --dev
+

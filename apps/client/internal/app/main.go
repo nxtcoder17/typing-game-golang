@@ -6,8 +6,8 @@ import (
 	"go.uber.org/fx"
 )
 
-var Module = fx.Module("app",
-
+var Module = fx.Module(
+	"app",
 	domain.Module,
 	ui.Module,
 )
